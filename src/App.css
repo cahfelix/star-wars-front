@@ -95,11 +95,11 @@ header {
    HEADER / TÍTULO
    ============================================ */
 h1 {
-  font-size: 6rem;
+  font-size: 3.5rem;
   font-weight: 900;
   color: #FFE81F;
   text-align: center;
-  margin: 6rem 0 4rem;
+  margin: 3rem 0 2rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   font-family: 'Impact', 'Arial Black', sans-serif;
@@ -114,6 +114,11 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 3rem;
+
+  /* Grid de 2 colunas */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 li {
@@ -133,26 +138,31 @@ ul li a {
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
 
 ul li a > div {
   background: #0a0a0a;
-  border: 1px solid #222;
-  padding: 2.5rem;
-  margin-bottom: 1px;
+  border: 2px solid #333;
+  padding: 1.5rem;
   transition: all 0.3s ease;
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 ul li a > div:hover {
   background: #111;
   border-color: #FFE81F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 232, 31, 0.1);
 }
 
 /* Card único (página de detalhes) */
 .detail-card {
   background: #0a0a0a;
-  border: 1px solid #222;
+  border: 2px solid #333;
   padding: 2.5rem;
   max-width: 1400px;
   margin: 2rem auto;
@@ -166,18 +176,18 @@ ul li a > div:hover {
    ============================================ */
 h2 {
   color: #FFE81F;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 p {
   color: #999;
-  font-size: 0.95rem;
-  margin: 0.8rem 0;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -185,7 +195,7 @@ strong {
   color: #ccc;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   margin-right: 0.5rem;
 }
@@ -211,8 +221,8 @@ strong {
    ============================================ */
 @media (max-width: 768px) {
   h1 {
-    font-size: 3rem;
-    margin: 3rem 0 2rem;
+    font-size: 2.5rem;
+    margin: 2rem 0 1.5rem;
     letter-spacing: 0.2rem;
   }
 
@@ -238,11 +248,17 @@ strong {
     padding: 0 1.5rem 2rem;
   }
 
-  div > div {
-    padding: 1.5rem;
+  ul {
+    padding: 0 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  ul li a > div {
+    padding: 1.25rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
