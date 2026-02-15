@@ -50,8 +50,8 @@ export function buscarPessoaPorNome(nome) {
 // NAVES (Starships)
 // ============================================
 
-export function buscarNaves() {
-  return fetchApi('/starships/', "Erro ao buscar naves")
+export function buscarNaves(page = 1) {
+  return fetchApi(`/starships/?page=${page}`, "Erro ao buscar naves")
 }
 
 export function buscarNavePorId(id) {
@@ -62,8 +62,8 @@ export function buscarNavePorId(id) {
 // ESPÉCIES (Species)
 // ============================================
 
-export function buscarEspecies() {
-  return fetchApi('/species/', "Erro ao buscar espécies")
+export function buscarEspecies(page = 1) {
+  return fetchApi(`/species/?page=${page}`, "Erro ao buscar espécies")
 }
 
 export function buscarEspeciePorId(id) {
@@ -78,6 +78,10 @@ export function buscarFilmes() {
   return fetchApi('/films/', "Erro ao buscar filmes")
 }
 
+export function buscarFilmePorId(id) {
+  return fetchApi(`/films/${id}`, "Erro ao buscar filme")
+}
+
 // ============================================
 // PLANETAS (Planets)
 // ============================================
@@ -86,10 +90,18 @@ export function buscarPlanetas() {
   return fetchApi('/planets/', "Erro ao buscar planetas")
 }
 
+export function buscarPlanetaPorId(id) {
+  return fetchApi(`/planets/${id}`, "Erro ao buscar planeta")
+}
+
 // ============================================
 // VEÍCULOS (Vehicles)
 // ============================================
 
 export function buscarVeiculos() {
   return fetchApi('/vehicles/', "Erro ao buscar veículos")
+}
+
+export function buscarVeiculoPorId(id) {
+  return fetchApi(`/vehicles/${id}`, "Erro ao buscar veículo")
 }
