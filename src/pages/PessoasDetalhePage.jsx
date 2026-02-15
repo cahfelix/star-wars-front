@@ -1,31 +1,22 @@
 import { usePessoaDetalhe } from "../hooks/usePessoaDetalhe"
 import { useParams } from "react-router-dom"
+import PageLayout from "../components/PageLayout"
+import PageState from "../components/PageState"
+import PessoaDetalheCard from "../components/PessoaDetalheCard"
 
 export default function PessoasDetalhePage() {
-  // Pegar ID da URL
   const { id } = useParams()
-
-  // Buscar dados
   const { item: pessoa, loading, erro } = usePessoaDetalhe(id)
 
-  if (erro) return <p className="error">{erro}</p>
-  if (loading) return <p className="loading">Carregando detalhes...</p>
-  if (!pessoa) return <p>Nenhum dado encontrado.</p>
-
-  return <PessoaDetalheCard pessoa={pessoa} />
-}
-
-function PessoaDetalheCard({ pessoa }) {
   return (
-    <div className="detail-card">
-      <h2>{pessoa.nome}</h2>
-      <p><strong>Sexo:</strong> {pessoa.sexo}</p>
-      <p><strong>Ano de Nascimento:</strong> {pessoa.anoNascimento}</p>
-      <p><strong>Altura:</strong> {pessoa.altura}</p>
-      <p><strong>Peso:</strong> {pessoa.peso}</p>
-      <p><strong>Cor do Cabelo:</strong> {pessoa.corCabelo}</p>
-      <p><strong>Cor da Pele:</strong> {pessoa.corPele}</p>
-      <p><strong>Cor dos Olhos:</strong> {pessoa.corOlhos}</p>
-    </div>
+    <PageLayout title="Detalhes da Pessoa">
+      <PageState
+        loading={loading}
+        erro={erro}
+        empty={!pessoa}
+      >
+        <PessoaDetalheCard pessoa={pessoa} />
+      </PageState>
+    </PageLayout>
   )
 }
