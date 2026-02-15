@@ -1,0 +1,248 @@
+/* ============================================
+   STAR WARS - Design Minimalista Elegante
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+  background: #000000;
+  border-bottom: 1px solid #222;
+  padding-bottom: 0;
+}
+
+/* Logo centralizado */
+.header-logo {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* Menu de navegação */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #222;
+  background: #000000;
+}
+
+.header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.header-nav a:hover {
+  opacity: 1;
+  color: #FFE81F;
+}
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FFE81F;
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   HEADER / TÍTULO
+   ============================================ */
+h1 {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #FFE81F;
+  text-align: center;
+  margin: 6rem 0 4rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  line-height: 1;
+}
+
+/* ============================================
+   LISTAS SEMÂNTICAS E CONTAINERS
+   ============================================ */
+ul {
+  list-style: none;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   GRID DE CARDS
+   ============================================ */
+.container {
+  padding: 0 3rem 4rem;
+}
+
+/* Links das listagens (não afeta menu) */
+ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+ul li a > div {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  padding: 2.5rem;
+  margin-bottom: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+ul li a > div:hover {
+  background: #111;
+  border-color: #FFE81F;
+}
+
+/* Card único (página de detalhes) */
+.detail-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  padding: 2.5rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   TIPOGRAFIA DOS CARDS
+   ============================================ */
+h2 {
+  color: #FFE81F;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+p {
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0.8rem 0;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+strong {
+  color: #ccc;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-right: 0.5rem;
+}
+
+/* ============================================
+   ESTADOS
+   ============================================ */
+.loading, .error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem 2rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.error {
+  color: #ff4444;
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    margin: 3rem 0 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .header-logo {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .header-nav {
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .header-nav a {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .container {
+    padding: 0 1.5rem 2rem;
+  }
+
+  div > div {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
