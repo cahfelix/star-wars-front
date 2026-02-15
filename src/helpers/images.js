@@ -21,13 +21,12 @@ const LOCAL_STARSHIP_IMAGES = {
   "10": "/images/naves/millennium-falcon.jpg",             // Millennium Falcon
   "11": "/images/naves/y-wing.jpg",                        // Y-wing
   "12": "/images/naves/x-wing.jpg",                        // X-wing
-  "13": "/images/naves/tie-advanced.jpg",                  // TIE Advanced x1
+  "13": "/images/naves/tie-advanced-x1.jpg",               // TIE Advanced x1
   "15": "/images/naves/executor.jpg",                      // Executor
   "17": "/images/naves/rebel-transport.jpg",               // Rebel transport
   "21": "/images/naves/slave-1.jpg",                       // Slave 1
   "22": "/images/naves/imperial-shuttle.jpg",              // Imperial shuttle
   "23": "/images/naves/death-star-2.jpg",                  // Death Star II
-  "27": "/images/naves/tie-interceptor.jpg",               // TIE interceptor
   "28": "/images/naves/a-wing.jpg",                        // A-wing
   "29": "/images/naves/b-wing.jpg",                        // B-wing
   "31": "/images/naves/republic-cruiser.jpg",              // Republic Cruiser
