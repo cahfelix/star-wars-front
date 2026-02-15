@@ -4,6 +4,8 @@ import PessoasDetalhePage from "./pages/PessoasDetalhePage"
 import NavesPage from './pages/NavesPage'
 import NavesDetalhe from './pages/NavesDetalhe'
 import EspeciesPage from "./pages/EspeciesPage"
+import Footer from "./components/Footer"
+import Breadcrumbs from "./components/Breadcrumbs"
 
 import './App.css'
 
@@ -32,6 +34,9 @@ function App() {
           </nav>
         </header>
 
+        {/* Breadcrumbs */}
+        <Breadcrumbs />
+
         {/* Rotas */}
         <Routes>
           <Route path="/" element={<PessoasPage />} />
@@ -40,6 +45,9 @@ function App() {
           <Route path="/naves/:id" element={<NavesDetalhe />} />
           <Route path="/especies" element={<EspeciesPage />} />
         </Routes>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </BrowserRouter>
   )
