@@ -12,7 +12,6 @@ import { extrairIdDaUrl } from "../helpers/extrairIdDaUrl"
 
 // Função para mapear UMA pessoa
 export function mapearPessoa(pessoaApi) {
-
   return {
     id: extrairIdDaUrl(pessoaApi.url),
     nome: pessoaApi?.name ?? "Desconhecido",

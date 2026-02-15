@@ -64,7 +64,7 @@ export function useDetalheGenerico(id, buscarPorIdFn, mapearFn, nomeRecurso = "I
     return () => {
       ativo = false
     }
-  }, [id])
+  }, [id, buscarPorIdFn, mapearFn, nomeRecurso])
 
   return { item, loading, erro }
 }
