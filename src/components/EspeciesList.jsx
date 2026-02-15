@@ -7,9 +7,11 @@ export default function EspeciesList({ especies }) {
         <li key={especie.id}>
           <Link to={`/especies/${especie.id}`}>
             <div>
-              <h2>{especie.nome}</h2>
-              <p><strong>Classificação:</strong> {especie.classificacao}</p>
-              <p><strong>Linguagem:</strong> {especie.linguagem}</p>
+              <div className="card-content">
+                <h2>{especie.nome}</h2>
+                <p><strong>Classificação:</strong> {especie.classificacao}</p>
+                <p><strong>Linguagem:</strong> {especie.linguagem}</p>
+              </div>
             </div>
           </Link>
         </li>

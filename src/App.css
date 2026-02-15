@@ -91,57 +91,14 @@ header {
   width: 100%;
 }
 
-/* ============================================
-   BREADCRUMBS
-   ============================================ */
-.breadcrumbs {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 3rem 1.5rem;
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.breadcrumbs-list {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.breadcrumbs-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.breadcrumbs-link {
-  color: #999;
-  text-decoration: none;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-
-.breadcrumbs-link:hover {
+/* Link ativo */
+.header-nav a.active {
   color: #FFE81F;
+  opacity: 1;
 }
 
-.breadcrumbs-separator {
-  color: #444;
-  font-size: 0.85rem;
-  user-select: none;
-}
-
-.breadcrumbs-current {
-  color: #FFE81F;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
+.header-nav a.active::after {
+  width: 100%;
 }
 
 /* ============================================
@@ -197,12 +154,13 @@ ul li a {
 ul li a > div {
   background: #0a0a0a;
   border: 2px solid #333;
-  padding: 1.5rem;
+  padding: 0;
   transition: all 0.3s ease;
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 ul li a > div:hover {
@@ -212,16 +170,185 @@ ul li a > div:hover {
   box-shadow: 0 4px 12px rgba(255, 232, 31, 0.1);
 }
 
+/* Imagem do card */
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  background: #0a0a0a;
+}
+
+ul li a > div:hover .card-image {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Conteúdo do card */
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #000000 100%);
+}
+
+/* Ajuste do título dentro do card com imagem */
+.card-content h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* Ajuste dos parágrafos dentro do card */
+.card-content p {
+  margin: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
 /* Card único (página de detalhes) */
 .detail-card {
   background: #0a0a0a;
   border: 2px solid #333;
-  padding: 2.5rem;
-  max-width: 1400px;
+  padding: 0;
+  max-width: 1200px;
   margin: 2rem auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 2rem 2.5rem;
+  border-bottom: 2px solid #333;
+  background: linear-gradient(to right, #0a0a0a 0%, #111 100%);
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #FFE81F;
+  text-shadow: 0 0 10px rgba(255, 232, 31, 0.3);
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 0;
+  min-height: 500px;
+}
+
+.detail-image-container {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.detail-image-container:hover .detail-image {
+  transform: scale(1.05);
+}
+
+.detail-info {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #000 100%);
+}
+
+.info-group {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+.info-group h3 {
+  color: #FFE81F;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.info-group p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-group p strong {
+  color: #999;
+  display: inline-block;
+  min-width: 150px;
+}
+
+/* Layout de detalhes sem imagem (naves, espécies) */
+.detail-content-no-image {
+  padding: 2.5rem;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #000 100%);
+}
+
+.detail-info-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout horizontal - Imagem no topo (para naves) */
+.detail-image-container-horizontal {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #000;
+  border-bottom: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image-horizontal {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  padding: 2rem;
+  background: #000;
+}
+
+.detail-image-container-horizontal:hover .detail-image-horizontal {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.detail-content-vertical {
+  padding: 2.5rem;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #000 100%);
+}
+
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ============================================
@@ -362,11 +489,23 @@ strong {
   }
 
   ul li a > div {
+    padding: 0;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
     padding: 1.25rem;
   }
 
-  h2 {
-    font-size: 1.25rem;
+  .card-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
   }
 
   .footer {
@@ -382,13 +521,77 @@ strong {
     font-size: 0.75rem;
   }
 
-  .breadcrumbs {
-    padding: 1rem 1.5rem 0;
+  /* Detalhes - Layout mobile */
+  .detail-card {
+    margin: 1rem;
   }
 
-  .breadcrumbs-link,
-  .breadcrumbs-current,
-  .breadcrumbs-separator {
-    font-size: 0.75rem;
+  .detail-header {
+    padding: 1.5rem;
+  }
+
+  .detail-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .detail-image-container {
+    border-right: none;
+    border-bottom: 2px solid #333;
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .detail-info {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .info-group {
+    padding: 1.25rem;
+  }
+
+  .info-group h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-group p {
+    font-size: 0.9rem;
+  }
+
+  .info-group p strong {
+    min-width: 120px;
+  }
+
+  /* Detalhes sem imagem - mobile */
+  .detail-content-no-image {
+    padding: 1.5rem;
+  }
+
+  .detail-info-full {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Layout horizontal - mobile */
+  .detail-image-container-horizontal {
+    height: 250px;
+  }
+
+  .detail-image-horizontal {
+    padding: 1rem;
+  }
+
+  .detail-content-vertical {
+    padding: 1.5rem;
+  }
+
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

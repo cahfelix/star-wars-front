@@ -7,9 +7,17 @@ export default function PessoasList({ pessoas }) {
         <li key={pessoa.id}>
           <Link to={`/pessoas/${pessoa.id}`}>
             <div>
-              <h2>{pessoa.nome}</h2>
-              <p><strong>Sexo:</strong> {pessoa.sexo}</p>
-              <p><strong>Ano:</strong> {pessoa.anoNascimento}</p>
+              <img
+                src={pessoa.imagem}
+                alt={pessoa.nome}
+                className="card-image"
+                onError={(e) => e.target.src = "/images/personagens/placeholder.png"}
+              />
+              <div className="card-content">
+                <h2>{pessoa.nome}</h2>
+                <p><strong>Sexo:</strong> {pessoa.sexo}</p>
+                <p><strong>Ano:</strong> {pessoa.anoNascimento}</p>
+              </div>
             </div>
           </Link>
         </li>

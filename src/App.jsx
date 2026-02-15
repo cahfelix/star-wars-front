@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom"
 import PessoasPage from './pages/PessoasPage'
 import PessoasDetalhePage from "./pages/PessoasDetalhePage"
 import NavesPage from './pages/NavesPage'
 import NavesDetalhe from './pages/NavesDetalhe'
 import EspeciesPage from "./pages/EspeciesPage"
 import Footer from "./components/Footer"
-import Breadcrumbs from "./components/Breadcrumbs"
 
 import './App.css'
 
@@ -19,7 +18,7 @@ function App() {
           <div className="header-logo">
             <Link to="/">
               <img
-                src="/star-wars-logo.png"
+                src="/images/star-wars-logo.png"
                 alt="Star Wars Logo"
                 className="logo"
               />
@@ -28,14 +27,11 @@ function App() {
 
           {/* Menu de navegação */}
           <nav className="header-nav">
-            <Link to="/">Pessoas</Link>
-            <Link to="/naves">Naves</Link>
-            <Link to="/especies">Espécies</Link>
+            <NavLink to="/" end>Pessoas</NavLink>
+            <NavLink to="/naves">Naves</NavLink>
+            <NavLink to="/especies">Espécies</NavLink>
           </nav>
         </header>
-
-        {/* Breadcrumbs */}
-        <Breadcrumbs />
 
         {/* Rotas */}
         <Routes>

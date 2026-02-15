@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import PageLayout from "../components/PageLayout"
 import PageState from "../components/PageState"
 import PessoaDetalheCard from "../components/PessoaDetalheCard"
+import PessoasList from "../components/PessoasList"
 
 export default function PessoasDetalhePage() {
   const { id } = useParams()
@@ -16,6 +17,9 @@ export default function PessoasDetalhePage() {
         empty={!pessoa}
       >
         <PessoaDetalheCard pessoa={pessoa} />
+
+        {/* <h2>Conheça outro personagens</h2>
+        <PessoasList pessoas={[pessoa]} /> */}
       </PageState>
     </PageLayout>
   )

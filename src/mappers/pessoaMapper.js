@@ -9,12 +9,17 @@
  * Princípio: Adapter Pattern
  */
 import { extrairIdDaUrl } from "../helpers/extrairIdDaUrl"
+import { getPersonImage } from "../helpers/images"
+
 
 // Função para mapear UMA pessoa
 export function mapearPessoa(pessoaApi) {
+  const id = extrairIdDaUrl(pessoaApi.url)
+
   return {
-    id: extrairIdDaUrl(pessoaApi.url),
+    id: id,
     nome: pessoaApi?.name ?? "Desconhecido",
+    imagem: getPersonImage(id),
     sexo: pessoaApi.gender,
     anoNascimento: pessoaApi.birth_year,
     altura: pessoaApi.height,

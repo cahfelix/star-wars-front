@@ -9,12 +9,14 @@
  * Princípio: Adapter Pattern
  */
 import { extrairIdDaUrl } from "../helpers/extrairIdDaUrl"
+import { getStarshipImage } from "../helpers/images"
 
 // Função para mapear UMA nave
 export function mapearNave(naveApi) {
   return {
     id: extrairIdDaUrl(naveApi.url),
     nome: naveApi.name,
+    imagem: getStarshipImage(extrairIdDaUrl(naveApi.url)),
     modelo: naveApi.model,
     classe: naveApi.starship_class
   }
@@ -33,6 +35,8 @@ export function mapearNaveDetalhe(naveApi) {
     autonomia: naveApi.MGLT,
     comprimento: naveApi.length,
     capacidadeCarga: naveApi.cargo_capacity,
-    consumiveis: naveApi.consumables
+    consumiveis: naveApi.consumables,
+    pilotos: naveApi.pilots?.map(url => extrairIdDaUrl(url)) || [],
+    filmes: naveApi.films?.map(url => extrairIdDaUrl(url)) || []
   }
 }
