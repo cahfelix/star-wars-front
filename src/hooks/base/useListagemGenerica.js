@@ -55,7 +55,8 @@ export function useListagemGenerica(buscarFn, mapearFn, nomeRecurso = "dados") {
     return () => {
       ativo = false
     }
-  }, [buscarFn, mapearFn, nomeRecurso])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return { dados, loading, erro }
 }
