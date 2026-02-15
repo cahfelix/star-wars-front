@@ -397,6 +397,30 @@ strong {
 }
 
 /* ============================================
+   SEÇÃO DE ITENS RELACIONADOS
+   ============================================ */
+.related-section {
+  margin-top: 4rem;
+  padding: 0 3rem 2rem;
+}
+
+.related-section h2 {
+  font-size: 1.8rem;
+  color: #FFE81F;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Força 3 colunas no grid de relacionados */
+.related-section ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -519,6 +543,22 @@ strong {
 
   .footer-copyright {
     font-size: 0.75rem;
+  }
+
+  /* Seção de relacionados - mobile */
+  .related-section {
+    margin-top: 3rem;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .related-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Volta para 1 coluna em mobile */
+  .related-section ul {
+    grid-template-columns: 1fr;
   }
 
   /* Detalhes - Layout mobile */
