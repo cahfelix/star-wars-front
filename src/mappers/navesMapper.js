@@ -36,6 +36,10 @@ export function mapearNaveDetalhe(naveApi) {
     comprimento: naveApi.length,
     capacidadeCarga: naveApi.cargo_capacity,
     consumiveis: naveApi.consumables,
+    fabricante: naveApi.manufacturer,
+    custo: naveApi.cost_in_credits,
+    tripulacao: naveApi.crew,
+    hyperdrive: naveApi.hyperdrive_rating,
     pilotos: naveApi.pilots?.map(url => extrairIdDaUrl(url)) || [],
     filmes: naveApi.films?.map(url => extrairIdDaUrl(url)) || []
   }

@@ -56,7 +56,7 @@ const LOCAL_SPECIES_IMAGES = {
   "3": "/images/especies/wookiee.jpg",           // Wookiee
   "4": "/images/especies/rodian.jpg",            // Rodian
   "5": "/images/especies/hutt.jpg",              // Hutt
-  "6": "/images/especies/yoda.jpg",              // Yoda's species
+  "6": "/images/especies/yodas.jpg",              // Yoda's species
   "7": "/images/especies/trandoshan.jpg",        // Trandoshan
   "8": "/images/especies/mon-calamari.jpg",      // Mon Calamari
   "9": "/images/especies/ewok.jpg",              // Ewok
@@ -107,6 +107,6 @@ export function getStarshipImage(id) {
 export function getSpeciesImage(id) {
   return (
     LOCAL_SPECIES_IMAGES[id] ||
-    "/images/especies/placeholder.jpg"
+    "/images/especies/placeholder.png"
   )
 }

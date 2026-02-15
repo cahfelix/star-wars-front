@@ -11,7 +11,7 @@ export default function NavesList({ naves }) {
                 src={nave.imagem}
                 alt={nave.nome}
                 className="card-image"
-                onError={(e) => e.target.src = "/images/naves/placeholder-naves.png"}
+                onError={(e) => e.target.src = "/images/naves/placeholder.png"}
               />
               <div className="card-content">
                 <h2>{nave.nome}</h2>

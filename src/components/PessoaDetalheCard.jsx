@@ -1,3 +1,5 @@
+import { obterNomePlaneta, obterNomeEspecie } from "../helpers/nomes"
+
 export default function PessoaDetalheCard({ pessoa }) {
   if (!pessoa) return null
 
@@ -31,6 +33,12 @@ export default function PessoaDetalheCard({ pessoa }) {
             <p><strong>Cor do Cabelo:</strong> {pessoa.corCabelo}</p>
             <p><strong>Cor da Pele:</strong> {pessoa.corPele}</p>
             <p><strong>Cor dos Olhos:</strong> {pessoa.corOlhos}</p>
+          </div>
+
+          <div className="info-group">
+            <h3>Origem</h3>
+            <p><strong>Planeta Natal:</strong> {pessoa.planetaNatalId ? obterNomePlaneta(pessoa.planetaNatalId) : "Desconhecido"}</p>
+            <p><strong>Espécie:</strong> {pessoa.especieIds?.length > 0 ? obterNomeEspecie(pessoa.especieIds[0]) : "Humano"}</p>
           </div>
         </div>
       </div>

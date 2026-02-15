@@ -26,7 +26,9 @@ export function mapearPessoa(pessoaApi) {
     peso: pessoaApi.mass,
     corCabelo: pessoaApi.hair_color,
     corPele: pessoaApi.skin_color,
-    corOlhos: pessoaApi.eye_color
+    corOlhos: pessoaApi.eye_color,
+    planetaNatalId: pessoaApi.homeworld ? extrairIdDaUrl(pessoaApi.homeworld) : null,
+    especieIds: pessoaApi.species?.map(url => extrairIdDaUrl(url)) || []
   }
 }
 

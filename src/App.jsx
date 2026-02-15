@@ -4,6 +4,7 @@ import PessoasDetalhePage from "./pages/PessoasDetalhePage"
 import NavesPage from './pages/NavesPage'
 import NavesDetalhe from './pages/NavesDetalhe'
 import EspeciesPage from "./pages/EspeciesPage"
+import EspeciesDetalhe from "./pages/EspeciesDetalhe"
 import Footer from "./components/Footer"
 
 import './App.css'
@@ -40,6 +41,7 @@ function App() {
           <Route path="/naves" element={<NavesPage />} />
           <Route path="/naves/:id" element={<NavesDetalhe />} />
           <Route path="/especies" element={<EspeciesPage />} />
+          <Route path="/especies/:id" element={<EspeciesDetalhe />} />
         </Routes>
 
         {/* Footer */}
