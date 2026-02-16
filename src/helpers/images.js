@@ -160,6 +160,15 @@ const LOCAL_SPECIES_IMAGES = {
   "37": "/images/especies/pau.jpg",              // Pau'an
 }
 
+const LOCAL_FILM_IMAGES = {
+  "1": "/images/filmes/a-new-hope.jpg",          // A New Hope (Episode IV)
+  "2": "/images/filmes/the-empire-strikes-back.jpg",  // The Empire Strikes Back (Episode V)
+  "3": "/images/filmes/return-of-the-jedi.jpg",  // Return of the Jedi (Episode VI)
+  "4": "/images/filmes/the-phantom-menace.jpg",  // The Phantom Menace (Episode I)
+  "5": "/images/filmes/attack-of-the-clones.jpg",  // Attack of the Clones (Episode II)
+  "6": "/images/filmes/revenge-of-the-sith.jpg",  // Revenge of the Sith (Episode III)
+}
+
 export function getPersonImage(id) {
   return (
     LOCAL_PERSON_IMAGES[id] ||
@@ -178,5 +187,12 @@ export function getSpeciesImage(id) {
   return (
     LOCAL_SPECIES_IMAGES[id] ||
     "/images/especies/placeholder.png"
+  )
+}
+
+export function getFilmImage(id) {
+  return (
+    LOCAL_FILM_IMAGES[id] ||
+    "/images/filmes/placeholder.png"
   )
 }

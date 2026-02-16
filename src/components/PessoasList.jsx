@@ -15,8 +15,6 @@ export default function PessoasList({ pessoas }) {
               />
               <div className="card-content">
                 <h2>{pessoa.nome}</h2>
-                <p><strong>Sexo:</strong> {pessoa.sexo}</p>
-                <p><strong>Ano:</strong> {pessoa.anoNascimento}</p>
               </div>
             </div>
           </Link>
