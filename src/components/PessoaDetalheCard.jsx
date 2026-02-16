@@ -23,7 +23,12 @@ export default function PessoaDetalheCard({ pessoa }) {
           <div className="info-group">
             <h3>Informações Pessoais</h3>
             <p><strong>Sexo:</strong> {pessoa.sexo}</p>
-            <p><strong>Ano de Nascimento:</strong> {pessoa.anoNascimento}</p>
+            {pessoa.anoNascimento && (
+              <p><strong>Nascimento:</strong> {pessoa.anoNascimento}{pessoa.localNascimento && ` em ${pessoa.localNascimento}`}</p>
+            )}
+            {pessoa.anoMorte && (
+              <p><strong>Morte:</strong> {pessoa.anoMorte}{pessoa.localMorte && ` em ${pessoa.localMorte}`}</p>
+            )}
           </div>
 
           <div className="info-group">
@@ -37,9 +42,31 @@ export default function PessoaDetalheCard({ pessoa }) {
 
           <div className="info-group">
             <h3>Origem</h3>
-            <p><strong>Planeta Natal:</strong> {pessoa.planetaNatalId ? obterNomePlaneta(pessoa.planetaNatalId) : "Desconhecido"}</p>
-            <p><strong>Espécie:</strong> {pessoa.especieIds?.length > 0 ? obterNomeEspecie(pessoa.especieIds[0]) : "Humano"}</p>
+            <p><strong>Planeta Natal:</strong> {pessoa.planetaNatalId ? obterNomePlaneta(pessoa.planetaNatalId) : pessoa.planetaNatalId || "Desconhecido"}</p>
+            <p><strong>Espécie:</strong> {pessoa.especieIds?.length > 0 ? obterNomeEspecie(pessoa.especieIds[0]) : pessoa.especieIds?.[0] || "Humano"}</p>
           </div>
+
+          {pessoa.mestres && pessoa.mestres.length > 0 && (
+            <div className="info-group">
+              <h3>👨‍🏫 Mestres</h3>
+              <ul>
+                {pessoa.mestres.map((mestre, index) => (
+                  <li key={index}>{mestre}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {pessoa.aprendizes && pessoa.aprendizes.length > 0 && (
+            <div className="info-group">
+              <h3>👨‍🎓 Aprendizes</h3>
+              <ul>
+                {pessoa.aprendizes.map((aprendiz, index) => (
+                  <li key={index}>{aprendiz}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

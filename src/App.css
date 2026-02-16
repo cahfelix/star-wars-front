@@ -297,6 +297,28 @@ ul li a > div:hover .card-image {
   min-width: 150px;
 }
 
+.info-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.info-group ul li {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 232, 31, 0.05);
+  border-left: 3px solid #FFE81F;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.info-group ul li:hover {
+  background: rgba(255, 232, 31, 0.1);
+  transform: translateX(5px);
+}
+
 /* Layout de detalhes sem imagem (naves, espécies) */
 .detail-content-no-image {
   padding: 2.5rem;

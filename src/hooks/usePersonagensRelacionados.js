@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { buscarPessoas } from "../services/swapiApi"
-import { mapearPessoas } from "../mappers/pessoaMapper"
+import { buscarTodosPersonagens } from "../services/starwarsCharactersApi"
+import { mapearPessoas } from "../mappers/pessoaMapperNew"
 
 /**
  * Função auxiliar para embaralhar array (algoritmo Fisher-Yates)
@@ -35,12 +35,11 @@ export function usePersonagensRelacionados(id, quantidade = 3) {
         setLoading(true)
         setErro(null)
 
-        const resposta = await buscarPessoas()
-        const personagensBrutos = resposta.results ?? resposta
-        const personagensMapeados = mapearPessoas(personagensBrutos)
+        const resposta = await buscarTodosPersonagens()
+        const personagensMapeados = mapearPessoas(resposta)
 
-        // Filtra o personagem atual
-        const outrosPersonagens = personagensMapeados.filter(p => p.id !== id)
+        // Filtra o personagem atual (comparar como número)
+        const outrosPersonagens = personagensMapeados.filter(p => p.id !== parseInt(id))
 
         // Embaralha e pega a quantidade desejada
         const personagensAleatorios = embaralhar(outrosPersonagens).slice(0, quantidade)
